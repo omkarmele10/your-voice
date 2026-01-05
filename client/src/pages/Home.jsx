@@ -42,14 +42,14 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="md:h-screen w-full bg-cover bg-center relative text-white scroll-mt-[100px]"
+      className=" md:h-screen w-full bg-cover bg-center relative text-white scroll-mt-[100px]"
       style={{ backgroundImage: `url(${home})` }}
     >
       {/* CONTENT */}
       <div className="relative h-full flex items-center">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-12 lg:px-20">
           <div
-            className={`transition-all duration-500 ${fade
+            className={` mt-10 md:mt-0 transition-all duration-500 ${fade
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-6"
               }`}
@@ -69,7 +69,7 @@ const Home = () => {
             </p>
 
             {/* INDICATOR (MOBILE: BELOW TEXT) */}
-            <div className="mb-2 flex gap-4 md:hidden">
+            <div className="my-10 md:mb-0 flex gap-4 md:hidden">
               {slides.map((_, i) => (
                 <div
                   key={i}

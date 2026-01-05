@@ -3,7 +3,6 @@ import contact from "../assets/i10.jpeg";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,13 +10,10 @@ const Contact = () => {
     option: "",
     details: "",
   });
-
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -25,20 +21,6 @@ const Contact = () => {
       alert("Please fill in all required fields.");
       return;
     }
-
-    // emailjs
-    //   .send(
-    //     "service_ibtaz8m",
-    //     "template_0as9mll",
-    //     {
-    //       name: formData.name,
-    //       email: formData.email,
-    //       phone: formData.phone,
-    //       subject: formData.subject,
-    //       message: formData.message,
-    //     },
-    //     "XSgISvDkBsE3gzZ5W"
-    //   )
     emailjs.send(
       "service_ibtaz8m",
       "template_0as9mll",
@@ -82,7 +64,7 @@ const Contact = () => {
           <p className="text-primary">CONTACT US</p>
           <h1 className="text-2xl md:text-3xl">REQUEST A FREE CALL BACK</h1>
 
-          <form  onSubmit={handleSubmit}  className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid md:grid-cols-2 gap-6">
               <input type="text"
                 name="name"
@@ -105,16 +87,7 @@ const Contact = () => {
               value={formData.telephone}
               onChange={handleChange}
               className=" w-full bg-[#f2f2f2] px-5 py-4 outline-none" />
-            {/* <select
-              className="w-full border border-gray-300 px-4 py-3 
-                   text-gray-700 bg-[#f2f2f2]
-                   focus:outline-none focus:border-primary"
-            >
-              <option value="">— Please choose an option —</option>
-              <option value="family-law">Family Law</option>
-              <option value="marriage-agreements">Marriage Agreements</option>
-              <option value="financial-settlements">Financial Settlements</option>
-            </select> */}
+
             <select
               name="option"
               value={formData.option}
